@@ -1,0 +1,45 @@
+package br.com.biscleta.ditado;
+
+public class Principal {
+	
+	public static void main(String[] args) {
+		String original = "A co-founder of Facebook writes in a newspaper.\n" + 
+				"He says that is time for the company to get smaller.\n" + 
+				"He says that Facebook has too much power.\n" + 
+				"He says that its boss, Mark Zuckerberg, has too much power, too.\n" + 
+				"He says that Zuckerberg is a good man.\n" + 
+				"However, he chooses money over safety.\n" + 
+				"He lets Facebook get less and less safe.\n" + 
+				"Facebook has problems.\n" + 
+				"One of the problems is people’s privacy.\n" + 
+				"Some people want the government to control Facebook.\n" + 
+				"Zuckerberg says that this can happen.";
+		
+		String transcrito = "A co-founder a Facebook writes in a newspaper.\n" + 
+				"He says that it's time to the company get smaller.\n" + 
+				"He says that the Facebook has too much power.\n" + 
+				"He says that its boss, Mark Zuckerberger, has too much power, too.\n" + 
+				"He says that Zuckerberg is a good man.\n" + 
+				"However, he chooses money over safety.\n" + 
+				"He lets Facebook get less and less safe.\n" + 
+				"Facebook has problems.\n" +
+				"One of the problems is people's privacy.\n" +
+				"Some people want the government to control Facebook.\n" +
+				"Zuckerberger says that this can happen.";
+		
+		System.out.println(original.equals(transcrito));
+		
+		String[] originalArray = original.split(" ");
+		
+		String[] transcritoArray = transcrito.split(" ");
+		
+		for (int i = 0; i < originalArray.length; i++) {
+			if (!originalArray[i].equals(transcritoArray[i])) {
+				System.out.println(originalArray[i]);
+				System.out.println(transcritoArray[i]);
+				System.out.println();
+			}
+		}
+	}
+
+}

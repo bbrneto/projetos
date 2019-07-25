@@ -1,0 +1,39 @@
+package br.com.biscleta.ditado;
+
+public class Principal {
+	
+	public static void main(String[] args) {
+		String original = "There is a new law in Taiwan.\n" + 
+				"Under this law, men can marry men.\n" + 
+				"Women can marry women.\n" + 
+				"Taiwan is the first Asian country where people can do this.\n" + 
+				"Many people are happy about this new law.\n" + 
+				"They come into the streets.\n" + 
+				"The country’s president is happy, too.\n" + 
+				"She tweets that this makes Taiwan a better country.";
+		
+		String transcrito = "There is a new law in Taiwan.\n" + 
+				"Under this law, men can marry men.\n" + 
+				"Women can marry women.\n" + 
+				"Taiwan is the first Asian country where people can do this.\n" + 
+				"Many people are happy about this new law.\n" + 
+				"They come into the streets.\n" + 
+				"The country’s president is happy, too.\n" + 
+				"She tweets that this makes Taiwan a better country.";
+		
+		System.out.println(original.equals(transcrito));
+		
+		String[] originalArray = original.split(" ");
+		
+		String[] transcritoArray = transcrito.split(" ");
+		
+		for (int i = 0; i < originalArray.length; i++) {
+			if (!originalArray[i].equals(transcritoArray[i])) {
+				System.out.println(originalArray[i]);
+				System.out.println(transcritoArray[i]);
+				System.out.println();
+			}
+		}
+	}
+
+}

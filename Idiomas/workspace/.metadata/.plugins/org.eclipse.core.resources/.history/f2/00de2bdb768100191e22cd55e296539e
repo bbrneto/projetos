@@ -1,0 +1,47 @@
+package br.com.biscleta.ditado;
+
+public class Principal {
+	
+	public static void main(String[] args) {
+		String original = "The 2018 World Cup is in Russia.\n" + 
+				"People are getting ready for the big event.\n" + 
+				"They are making souvenirs for the visitors.\n" + 
+				"One souvenir is the Matryoshka.\n" + 
+				"It is a type of doll.\n" + 
+				"It is made of wood.\n" + 
+				"Matryoshkas always come in a set.\n" + 
+				"Each Matryoshka has a smaller Matryoshka inside it.\n" + 
+				"There can be 5 to 30 dolls in one set.\n" + 
+				"The Matryoshkas are painted by hand.\n" + 
+				"People paint the World Cup symbols on some Matryoshkas.\n" + 
+				"Russians think that the Matryoshka is a good souvenir.";
+		
+		String transcrito = "The 2018 World Cup is in Russia.\n" + 
+				"People are getting ready for the big event.\n" + 
+				"They are making souvenirs for the visitors.\n" + 
+				"One souvenir is the Matryoshka.\n" + 
+				"It is a type of doll.\n" + 
+				"It is made of wood.\n" + 
+				"Matryoshkas always come in a set.\n" + 
+				"Each Matryoshka has a smaller Matryoshka inside it.\n" + 
+				"There can be 5 to 30 dolls in one set.\n" + 
+				"The Matryoshkas are painted by hand.\n" + 
+				"People paint the World Cup symbols on some Matryoshkas.\n" + 
+				"Russians think that the Matryoshka is a good souvenir.";
+		
+		System.out.println(original.equals(transcrito));
+		
+		String[] originalArray = original.split(" ");
+		
+		String[] transcritoArray = transcrito.split(" ");
+		
+		for (int i = 0; i < originalArray.length; i++) {
+			if (!originalArray[i].equals(transcritoArray[i])) {
+				System.out.println(originalArray[i]);
+				System.out.println(transcritoArray[i]);
+				System.out.println();
+			}
+		}
+	}
+
+}

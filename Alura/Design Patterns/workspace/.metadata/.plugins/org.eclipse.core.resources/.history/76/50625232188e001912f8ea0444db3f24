@@ -1,0 +1,12 @@
+package strategy;
+
+// Tipo de estratégia
+public class ICCC implements Imposto {
+
+	@Override
+	public double calcula(Orcamento orcamento) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

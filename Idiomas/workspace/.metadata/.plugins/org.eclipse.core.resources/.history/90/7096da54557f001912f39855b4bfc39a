@@ -1,0 +1,23 @@
+package br.com.biscleta.ditado;
+
+public class Principal {
+	
+	public static void main(String[] args) {
+		String original = "";
+		
+		String transcrito = "";
+		
+		System.out.println(original.equals(transcrito));
+		
+		String[] originalArray = original.split(" ");
+		
+		String[] transcritoArray = transcrito.split(" ");
+		
+		for (int i = 0; i < originalArray.length; i++) {
+			if (!originalArray[i].equals(transcritoArray[i])) {
+				System.out.println(transcritoArray[i]);
+			}
+		}
+	}
+
+}

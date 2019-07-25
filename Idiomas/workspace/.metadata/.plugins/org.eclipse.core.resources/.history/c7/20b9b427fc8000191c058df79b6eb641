@@ -1,0 +1,41 @@
+package br.com.biscleta.ditado;
+
+public class Principal {
+	
+	public static void main(String[] args) {
+		String original = "A dog falls into the River Thames.\n" + 
+				"It needs help.\n" + 
+				"A man sees it.\n" + 
+				"He jumps into the water.\n" + 
+				"He saves the dog.\n" + 
+				"However, now the man is in trouble.\n" + 
+				"He needs help.\n" + 
+				"People call for a lifeboat.\n" + 
+				"It comes and saves him.";
+		
+		String transcrito = "A dog falls into the River Thames.\n" + 
+				"It needs help.\n" + 
+				"A man sees it.\n" + 
+				"He jumps into the water.\n" + 
+				"He saves the dog.\n" + 
+				"However, now the man is in trouble.\n" + 
+				"He needs help.\n" + 
+				"People call for a lifeboat.\n" + 
+				"It comes and saves him.";
+		
+		System.out.println(original.equals(transcrito));
+		
+		String[] originalArray = original.split(" ");
+		
+		String[] transcritoArray = transcrito.split(" ");
+		
+		for (int i = 0; i < originalArray.length; i++) {
+			if (!originalArray[i].equals(transcritoArray[i])) {
+				System.out.println(originalArray[i]);
+				System.out.println(transcritoArray[i]);
+				System.out.println();
+			}
+		}
+	}
+
+}

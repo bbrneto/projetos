@@ -1,0 +1,19 @@
+package br.com.caelum.contas.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import br.com.caelum.contas.dao.ContaDAO;
+
+@Controller
+public class ContaController {
+	
+	@RequestMapping("/adicionaConta")
+	public String adiciona() {
+		ContaDAO dao = new ContaDAO();
+		dao.adiciona(conta);
+		
+		return "conta-adicionada";
+	}
+
+}

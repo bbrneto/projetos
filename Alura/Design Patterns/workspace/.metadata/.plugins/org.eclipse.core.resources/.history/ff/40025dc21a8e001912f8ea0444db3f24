@@ -1,0 +1,11 @@
+package investimento;
+
+public class Moderado implements Investimento {
+
+	@Override
+	public double calcula(Conta conta) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
