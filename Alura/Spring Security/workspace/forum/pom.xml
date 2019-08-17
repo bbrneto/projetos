@@ -28,6 +28,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
@@ -35,6 +41,19 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
+		</dependency>
+
+		<!-- O Spring utiliza um provedor padrão de cache, que não deve ser utilizado em produção -->
+		<!-- O ideal é utilizar um provedor como o REDIS -->
+		<!-- Recomenda-se utilizar cache apenas em tabelas que nunca ou raramente são atualizadas. Ex: país, cidade, tipo etc -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 
 		<!-- Reinicia o servidor automaticamente ao detectar alterações no código-fonte da aplicação -->
