@@ -1,8 +1,0 @@
-package investimento;
-
-// Encapsula algoritmos
-public interface Investimento {
-	
-	double calcula(Conta conta);
-
-}
