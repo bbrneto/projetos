@@ -1,9 +1,0 @@
-package br.com.alura.forum.dto;
-
-public class TokenDTO {
-
-	public TokenDTO(String token, String tipo) {
-		// TODO Auto-generated constructor stub
-	}
-
-}

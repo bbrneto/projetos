@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-<typeInfo handle="=forum/src\/main\/java&lt;br.com.alura.forum.modelo{Topico.java[Topico" modifiers="1" timestamp="1561418031234"/>
-<typeInfo handle="=forum/src\/main\/java&lt;br.com.alura.forum{ForumApplication.java[ForumApplication" modifiers="1" timestamp="1564141471741"/>
-<typeInfo handle="=forum/src\/main\/java&lt;br.com.alura.forum.controller{TopicoController.java[TopicoController" modifiers="1" timestamp="1564143204205"/>
-<typeInfo handle="=forum/src\/main\/java&lt;br.com.alura.forum.modelo{Usuario.java[Usuario" modifiers="1" timestamp="1564524762350"/>
-<typeInfo handle="=forum/src\/main\/java&lt;br.com.alura.forum.config.security{SecurityConfigurations.java[SecurityConfigurations" modifiers="1" timestamp="1564585993957"/>
-</typeInfoHistroy>
