@@ -1,21 +1,68 @@
 Alura/Design Patterns/workspace/investimento/bin/*
+Alura/Design Patterns/workspace/investimento/.settings/*
+Alura/Design Patterns/workspace/investimento/.classpath
+Alura/Design Patterns/workspace/investimento/.project
+
 Alura/Design Patterns/workspace/strategy/bin/*
+Alura/Design Patterns/workspace/strategy/.settings/*
+Alura/Design Patterns/workspace/strategy/.classpath
+Alura/Design Patterns/workspace/strategy/.project
+
 Alura/Design Patterns/workspace/.metadata/*
 
+
+
 Alura/MongoDB/workspace/escolalura/target/*
+Alura/MongoDB/workspace/escolalura/.mvn/*
+Alura/MongoDB/workspace/escolalura/.settings/*
+Alura/MongoDB/workspace/escolalura/.classpath
+Alura/MongoDB/workspace/escolalura/.project
+
 Alura/MongoDB/workspace/JavaMongo/target/*
+Alura/MongoDB/workspace/JavaMongo/.settings/*
+Alura/MongoDB/workspace/JavaMongo/.classpath
+Alura/MongoDB/workspace/JavaMongo/.project
+
 Alura/MongoDB/workspace/.metadata/*
 
+
+
 Alura/Spring Boot/workspace/forum/target/*
+Alura/Spring Boot/workspace/forum/.mvn/*
+Alura/Spring Boot/workspace/forum/.settings/*
+Alura/Spring Boot/workspace/forum/.classpath
+Alura/Spring Boot/workspace/forum/.project
+
 Alura/Spring Boot/workspace/.metadata/*
 
+
+
 Alura/Spring MVC/workspace/contas/build/*
+Alura/Spring MVC/workspace/contas/.settings/*
+Alura/Spring MVC/workspace/contas/.classpath
+Alura/Spring MVC/workspace/contas/.project
+
 Alura/Spring MVC/workspace/.metadata/*
 
+
+
 Alura/Spring Security/workspace/forum/target/*
+Alura/Spring Security/workspace/forum/.mvn/*
+Alura/Spring Security/workspace/forum/.settings/*
+Alura/Spring Security/workspace/forum/.classpath
+Alura/Spring Security/workspace/forum/.project
+
 Alura/Spring Security/workspace/.metadata/*
+
+
 
 Caelum/Java/.metadata/*
 
+
+
 Idiomas/workspace/ditado/bin/*
+Idiomas/workspace/ditado/.settings/*
+Idiomas/workspace/ditado/.classpath
+Idiomas/workspace/ditado/.project
+
 Idiomas/workspace/.metadata/*
