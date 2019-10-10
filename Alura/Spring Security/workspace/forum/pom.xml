@@ -56,6 +56,11 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 		<!-- Reinicia o servidor automaticamente ao detectar alterações no código-fonte da aplicação -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
