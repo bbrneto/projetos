@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".CadastroActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email" />
+
+    <EditText
+        android:id="@+id/activity_cadastro_edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Informe o e-mail"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Senha" />
+
+    <EditText
+        android:id="@+id/activity_cadastro_edit_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Informe a senha"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirmação" />
+
+    <EditText
+        android:id="@+id/activity_cadastro_edit_confirmacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Informe a senha novamente"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/activity_cadastro_button_cadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/activity_cadastro_button_cancelar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:textAllCaps="false" />
+
+</LinearLayout>
