@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +17,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 
 import mac.example.firebaseautenticacao.util.Util;
 
@@ -69,51 +69,43 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Preencha os campos.", Toast.LENGTH_SHORT).show();
         } else {
             if (Util.verificaInternet(this)) {
-                confirmaUsuario(email, senha);
+                identificaUsuario(email, senha);
             } else {
                 Toast.makeText(this, "Verifique se sua comexão de Wifi ou 3G está funcionando.", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
-    private void confirmaUsuario(String email, String senha) {
+    private void identificaUsuario(String email, String senha) {
         firebaseAuth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     startDashboard();
                 } else {
-                    String resposta = task.getException().toString();
+                    FirebaseAuthException e = (FirebaseAuthException) task.getException();
 
-                    exibeErro(resposta);
+                    exibeMensagem(e.getErrorCode());
                 }
             }
         });
     }
 
     private void startDashboard() {
-        Intent intent = new Intent(this, DashboardActivity.class);
-
-        startActivity(intent);
-
-        Toast.makeText(LoginActivity.this, "Usuário logado com sucesso.", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, DashboardActivity.class));
 
         finish();
     }
 
-    private void exibeErro(String resposta) {
-        if (resposta.contains("least 6 characters")) {
-            Toast.makeText(this, "Digite uma senha maior que 5 caracteres.", Toast.LENGTH_SHORT).show();
-        } else if (resposta.contains("address is badly")) {
+    private void exibeMensagem(String errorCode) {
+        if (errorCode.equals("ERROR_INVALID_EMAIL")) {
             Toast.makeText(this, "E-mail inválido.", Toast.LENGTH_SHORT).show();
-        } else if (resposta.contains("interrupted connection")) {
-            Toast.makeText(this, "Sem conexão com o Firebase.", Toast.LENGTH_SHORT).show();
-        } else if (resposta.contains("password is invalid")) {
-            Toast.makeText(this, "Senha inválida.", Toast.LENGTH_SHORT).show();
-        } else if (resposta.contains("There is no user")) {
+        } else if (errorCode.equals("ERROR_USER_NOT_FOUND")) {
             Toast.makeText(this, "E-mail não cadastrado.", Toast.LENGTH_SHORT).show();
+        } else if (errorCode.equals("ERROR_WRONG_PASSWORD")) {
+            Toast.makeText(this, "Senha incorreta.", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, resposta, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, errorCode, Toast.LENGTH_SHORT).show();
         }
     }
 
