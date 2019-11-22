@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
 
-    private FirebaseUser firebaseUser;
-
     private FirebaseAuth.AuthStateListener authStateListener;
 
     @Override
@@ -27,16 +25,55 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        inicializaActivity();
+
         configuraButtonAutenticar();
 
         configuraButtonCadastrar();
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        exibeUsuario();
+        exibeEstado();
     }
 
-    private void exibeUsuario() {
+    private void inicializaActivity() {
+        buttonAutenticar = findViewById(R.id.activity_main_button_autenticar);
+        buttonCadastrar = findViewById(R.id.activity_main_button_cadastrar);
+    }
+
+    private void configuraButtonAutenticar() {
+        buttonAutenticar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                autentica();
+            }
+        });
+    }
+
+    private void autentica() {
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+
+        if (user == null) {
+            startActivity(new Intent(this, LoginActivity.class));
+        } else {
+            startActivity(new Intent(this, DashboardActivity.class));
+        }
+    }
+
+    private void configuraButtonCadastrar() {
+        buttonCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cadastra();
+            }
+        });
+    }
+
+    private void cadastra() {
+        startActivity(new Intent(this, RegisterActivity.class));
+    }
+
+    private void exibeEstado() {
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -47,42 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-    }
-
-    private void configuraButtonAutenticar() {
-        buttonAutenticar = findViewById(R.id.activity_main_button_autenticar);
-        buttonAutenticar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                autentica();
-            }
-        });
-    }
-
-    private void autentica() {
-        firebaseUser = firebaseAuth.getCurrentUser();
-
-        if (firebaseUser == null) {
-            startActivity(new Intent(this, LoginActivity.class));
-        } else {
-            startActivity(new Intent(this, DashboardActivity.class));
-        }
-    }
-
-    private void configuraButtonCadastrar() {
-        buttonCadastrar = findViewById(R.id.activity_main_button_cadastrar);
-        buttonCadastrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cadastra();
-            }
-        });
-    }
-
-    private void cadastra() {
-        Intent intent = new Intent(this, CadastroActivity.class);
-
-        startActivity(intent);
     }
 
     @Override
