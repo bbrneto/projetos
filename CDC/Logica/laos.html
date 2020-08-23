@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bandeira do Laos</title>
+  </head>
+  <body>
+    <canvas id="bandeira" width="600" height="400"></canvas>
+
+    <script>
+      var bandeira = document.getElementById("bandeira");
+
+      var context = bandeira.getContext('2d');
+
+      context.fillStyle = "red";
+      context.fillRect(0, 0, 600, 100);
+
+      context.fillStyle = "blue";
+      context.fillRect(0, 100, 600, 200);
+
+      context.fillStyle = "red";
+      context.fillRect(0, 300, 600, 100);
+
+      context.fillStyle = "white";
+      context.beginPath();
+      context.arc(300, 200, 75, 0, 2 * Math.PI);
+      context.fill();
+    </script>
+  </body>
+</html>

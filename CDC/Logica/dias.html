@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<script>
+  function calculaDias(idade) {
+    return idade * 365;
+  }
+
+  function calculaBatimentos(dias) {
+    return dias * 24 * 60 * 80;
+  }
+
+  var idade = prompt("Qual a sua idade?");
+
+  var dias = calculaDias(idade);
+  document.write("Quantidade de dias: " + dias);
+
+  document.write("<br>");
+
+  var batimentos = calculaBatimentos(dias);
+  document.write("Quantidade de batimentos: " + batimentos);
+</script>

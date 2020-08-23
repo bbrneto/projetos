@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Canvas Loop</title>
+  </head>
+
+  <body>
+    <canvas id="tela" width="600" height="400"></canvas>
+
+    <script>
+      var tela = document.getElementById("tela");
+
+      var pincel = tela.getContext("2d");
+
+      function desenhaQuadrado(x, y, cor) {
+        pincel.fillStyle = cor;// Estilo de preenchimento
+        pincel.fillRect(x, y, 50, 50);
+
+        pincel.strokeStyle = "black";// Estilo de traçado
+        pincel.strokeRect(x, y, 50, 50);
+      }
+
+      function desenhaBolaAzul(x, y) {
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x, y, 25, 0, 2 * Math.PI);
+        pincel.fill();
+      }
+
+      for (var x = 0; x < 600; x += 50) {
+          desenhaQuadrado(x, 0, "green");
+          desenhaQuadrado(x, 50, "red");
+          desenhaBolaAzul(x + 25, 100);
+      }
+    </script>
+  </body>
+</html>

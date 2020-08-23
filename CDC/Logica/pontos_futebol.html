@@ -1,0 +1,44 @@
+<script>
+  function pulaLinha() {
+    document.write("<br>");
+  }
+
+  function mostra(frase) {
+    document.write("<big>" + frase + "</big>");
+    pulaLinha();
+  }
+
+  function calculaPontos(vitorias, empates, derrotas) {
+    var pontos = (vitorias * 3) + empates;
+    pontos = pontos - derrotas;
+
+    return pontos;
+  }
+
+  // Atenção: O sinal de "+" é usado para concatenar duas strings ou somar dois números.
+  // Quando o sinal de "+" estiver entre uma string e um número, será feita uma concatenação.
+  var vitorias = parseInt(prompt("Vitórias"));
+  var empates = parseInt(prompt("Empates"));
+  var derrotas = parseInt(prompt("Derrotas"));
+  var pontos = calculaPontos(vitorias, empates, derrotas);
+
+  var vitoriasDoAdversario = parseInt(prompt("Vitórias do adversário"));
+  var empatesDoAdversario = parseInt(prompt("Empates do adversário"));
+  var derrotasDoAdversario = parseInt(prompt("Derrotas do adversário"));
+  var pontosDoAdversario = calculaPontos(vitoriasDoAdversario, empatesDoAdversario, derrotasDoAdversario);
+
+  mostra("Pontos: " + pontos);
+  mostra("Pontos do adversário: " + pontosDoAdversario);
+
+  if (pontos < pontosDoAdversario) {
+    mostra("Nosso time está PIOR que a concorrência!");
+  }
+
+  if (pontos == pontosDoAdversario) {
+    mostra("Nosso time está EMPATADO com a concorrência!");
+  }
+
+  if (pontos > pontosDoAdversario) {
+    mostra("Nosso time está MELHOR que a concorrência!");
+  }
+</script>

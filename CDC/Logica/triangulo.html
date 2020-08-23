@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Triângulo</title>
+  </head>
+  <body>
+    <canvas id="tela" width="500" height="500"></canvas>
+
+    <script>
+      var tela = document.getElementById("tela");
+
+      var pincel = tela.getContext("2d");
+
+      function desenhaBolaAzul(linha, coluna) {
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(25 + ((coluna - 1) * 50), 25 + ((linha - 1) * 50), 25, 0, 2 * Math.PI);
+        pincel.fill();
+      }
+
+      for(var linha = 1; linha <= 10; linha = linha + 1) {
+        for(var coluna = 1; coluna <= linha; coluna = coluna + 1) {
+          desenhaBolaAzul(linha, coluna);
+        }
+      }
+    </script>
+  </body>
+</html>

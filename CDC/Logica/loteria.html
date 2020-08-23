@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Loteria</title>
+  </head>
+  <body>
+    <input id="numero" type="text">
+
+    <input id="advinhar" type="submit" value="Compare com o meu segredo.">
+
+    <script>
+    // Arrays são objetos, ou seja, possuem valores e também funções.
+      var segredos = [16, 34, 37, 42, 50, 58];
+
+      var caixaDoNumero = document.getElementById("numero");
+
+      function botaoClicado() {// Callback, ou seja, função a ser chamada.
+        var numero = caixaDoNumero.value;
+
+        for (var i = 0; i < segredos.length; i = i + 1) {
+          var segredo = segredos[i];
+
+          if (numero == segredo) {
+            alert("Parabéns! Você acertou o " + (i + 1) + "º número.");
+
+            // break; Interrompe a execução do laço.
+            return;// Interrompe a execução da função.
+          }
+        }
+
+        alert("Você errou todos os segredos...");
+      }
+
+      var botaoAdvinhar = document.getElementById("advinhar");
+      botaoAdvinhar.onclick = botaoClicado;
+    </script>
+  </body>
+</html>

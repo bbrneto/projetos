@@ -1,0 +1,21 @@
+<script>
+  function calculaNumeroDeColunas(numeroDeLinhas) {
+    return (numeroDeLinhas * 2) - 1;
+  }
+
+  var numeroDeLinhas = prompt("Quantas linhas?");
+
+  var numeroDeColunas = calculaNumeroDeColunas(numeroDeLinhas);
+
+  for(var linha = 0; linha < numeroDeLinhas; linha = linha + 1) {
+    for(var coluna = 1; coluna <= numeroDeColunas; coluna = coluna + 1) {
+      if (coluna == linha + 1 || coluna == numeroDeColunas - linha) {
+        document.write("*");
+      } else {
+        document.write("_");
+      }
+    }
+
+    document.write("<br>");
+  }
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bandeira de Madagascar</title>
+  </head>
+  <body>
+    <canvas id="bandeira" width="600" height="400"></canvas>
+
+    <script>
+      var bandeira = document.getElementById("bandeira");
+
+      var context = bandeira.getContext('2d');
+
+      context.strokeStyle = "black";
+      context.strokeRect(0, 0, 600, 400);
+
+      context.fillStyle = "red";
+      context.fillRect(200, 0, 400, 200);
+
+      context.fillStyle = "green";
+      context.fillRect(200, 200, 400, 200);
+    </script>
+  </body>
+</html>

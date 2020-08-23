@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mouse</title>
+  </head>
+  <body>
+    <canvas id="tela" width="600" height="400"></canvas>
+
+    <script>
+      function inicializa() {
+        pincel.fillStyle = 'green';
+        pincel.fillRect(0, 0, 100, 100);
+
+        pincel.fillStyle = 'blue';
+        pincel.fillRect(0, 100, 100, 100);
+
+        pincel.fillStyle = 'yellow';
+        pincel.fillRect(0, 200, 100, 100);
+
+        pincel.fillStyle = 'red';
+        pincel.fillRect(0, 300, 100, 100);
+      }
+
+      var corEscolhida = 'gray';
+
+      function escolheCor(mouseEvent) {// Função de callback
+        var x = mouseEvent.pageX - tela.offsetLeft;
+
+        var y = mouseEvent.pageY - tela.offsetTop;
+
+        if (x <= 100) {
+          if (y >= 0 && y < 100) {
+            corEscolhida = 'green';
+          }
+
+          if (y >= 100 && y < 200) {
+            corEscolhida = 'blue';
+          }
+
+          if (y >= 200 && y < 300) {
+            corEscolhida = 'yellow';
+          }
+
+          if (y >= 300 && y <= 400) {
+            corEscolhida = 'red';
+          }
+        }
+      }
+
+      function pintaCanvas(mouseEvent) {// Função de callback
+        var x = mouseEvent.pageX - tela.offsetLeft;
+
+        var y = mouseEvent.pageY - tela.offsetTop;
+
+        if (x >= 120) {
+          pincel.fillStyle = corEscolhida;
+          pincel.beginPath();
+          pincel.arc(x, y, 10, 0, 2 * Math.PI);
+          pincel.fill();
+        }
+      }
+
+      var tela = document.querySelector('#tela');
+      tela.onclick = escolheCor;
+      tela.onmousemove = pintaCanvas;
+
+      var pincel = tela.getContext('2d');
+      pincel.fillStyle = 'gray';
+      pincel.fillRect(110, 0, 490, 400);
+
+      inicializa();
+    </script>
+  </body>
+</html>

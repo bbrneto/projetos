@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Plano cartesiano</title>
+  </head>
+  <body>
+    <canvas id="tela" width="600" height="400"></canvas>
+
+    <script>
+      var tela = document.getElementById("tela");
+
+      var pincel = tela.getContext("2d");
+      pincel.fillStyle = "blue";
+
+      function funcaoLinear(x) {// É como se fosse um tipo específico.
+        return x + 1;
+      }
+
+      function funcaoQuadratica(x) {// É como se fosse um tipo específico.
+        return x * x * 0.01;
+      }
+
+      function funcaoSenica(x) {// É como se fosse um tipo específico.
+        return Math.sin(x / 20) * 100 + 200;
+      }
+
+      function desenhaFuncao(funcaoMatematica) {// É semelhante a uma herança.
+        for(var x = 0; x < 201; x = x + 1) {
+          var y = funcaoMatematica(x);// É como se fosse um tipo genérico.
+
+          pincel.beginPath();
+          pincel.arc(x, 400 - y, 2, 0, 2 * Math.PI)
+          pincel.fill();
+
+          console.log("Para x = " + x + ", o y = " + y);
+        }
+      }
+
+      desenhaFuncao(funcaoLinear);// Uma função que recebe outra como parâmetro.
+      desenhaFuncao(funcaoQuadratica);// A função parece uma variável.
+      desenhaFuncao(funcaoSenica);
+    </script>
+  </body>
+</html>

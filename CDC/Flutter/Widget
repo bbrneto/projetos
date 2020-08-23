@@ -1,0 +1,18 @@
+# Atenção: Todo widget deve ser declarado como uma classe, ou seja, é necessário estender de StatelessWidget ou StatefulWidget.
+# Importante: Todo widget possui um método build().
+
+
+Stateless widget
+	- Sem interação do usuário
+	- Sem estado
+	- Estático
+	- Imutável
+
+Stateful widget
+	- Com interação do usuário
+	- Com estado
+	- Dinâmico
+	- Mutável
+
+# Observação: Estado corresponde ao que pode ser alterado na interface do aplicativo.
+Cada widget cuida de seu estado e fornece para a árvore principal de widgets apenas uma representação visual dele.

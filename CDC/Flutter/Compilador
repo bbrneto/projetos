@@ -1,0 +1,12 @@
+- Desenvolvimento:
+	Compilador JIT (Just In Time)
+	Ciclos de desenvolvimento extremamente rápidos
+	Ótima para gerar de forma rápida alterações em tempo de execução
+	Código em instruções para o intermediário
+
+
+- Produção:
+	Compilador AOT (Ahead Of Time)
+	Tempo de execução e inicialização extremamente rápidos
+	O código não será modificado enquanto o usuário está utilizando
+	Código em instruções diretas para a máquina

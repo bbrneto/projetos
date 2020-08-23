@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<script>
+  function calculaIMC(peso, altura) {
+    var imc = peso / (altura * altura);
+
+    return imc;
+  }
+
+  var nome = prompt("Qual é o seu nome?");// Captura o nome na caixa de diálogo
+
+  var peso = prompt(nome + ", qual é o seu peso?");// Captura o peso na caixa de diálogo
+
+  var altura = prompt("E sua altura?");// Captura a altua na caixa de diálogo
+
+  var imc = calculaIMC(peso, altura);
+  document.write(nome + ", seu IMC é: " + Math.round(imc));
+
+  /*
+    Atenção:
+    NaN -> Not a Number
+    Ele é retornado quando uma operação matemática falha (Math.sqrt(-1))
+    ou quando uma função tenta transformar uma string em inteiro (parseInt("blabla")).
+  */
+</script>

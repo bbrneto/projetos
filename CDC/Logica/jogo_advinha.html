@@ -1,0 +1,34 @@
+<script>
+  function pulaLinha() {
+    document.write("<br>");
+  }
+
+  function mostra(frase) {
+    document.write("<big>" + frase + "</big>");
+    pulaLinha();
+  }
+
+  function sorteia(numero) {
+    // A função Math.random() gera números aleatórios entre 0 e 1.
+    return Math.round(Math.random() * numero);
+  }
+
+  var numeroPensado = sorteia(5);
+
+  var chute = prompt("Qual o número sorteado?");
+
+  // A função isNaN indica se um determinado valor não é um número.
+  if (isNaN(chute)) {
+    mostra("Digite apenas números.");
+  } else {
+    if (chute == numeroPensado) {
+      mostra("Você acertou!");
+    } else {
+      if (numeroPensado < chute) {
+        mostra("Você errou! Pensei um número menor: " + numeroPensado);
+      } else {
+        mostra("Você errou! Pensei um número maior: " + numeroPensado);
+      }
+    }
+  }
+</script>

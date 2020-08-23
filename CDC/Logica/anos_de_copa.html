@@ -1,0 +1,27 @@
+<script>
+  function mostra(frase) {
+    document.write("<big>" + frase + "</big><br>");// Modifica o HTML ao escrever a frase na página.
+  }
+  // A função 'prompt' sempre devolve uma string.
+  // A função 'parseInt' converte uma string em número.
+  var anoDeCopa = parseInt(prompt("Qual é o ano inicial?"));
+  // alert(): output
+  // prompt(): input
+  var anoLimite = prompt("Qual é o ano limite?");
+
+  while(anoDeCopa <= anoLimite) {// Bloco de repetição ou Bloco de iteração.
+    mostra(anoDeCopa + " é ano de copa!");
+// O sinal de '+' entre duas strings gera uma concatenação.
+// O sinal de '+' entre uma string e um número gera uma concatenação.
+// O sinal de '+' entre dois números gera uma soma.
+    anoDeCopa = anoDeCopa + 4;
+// O sinal de '*' entre duas strings gera uma multiplicação.
+// O sinal de '*' entre uma string e um número gera uma multiplicação.
+// O sinal de '*' entre dois números gera uma multiplicação.
+
+// Resumindo: preocupe-se apenas com o sinal de '+'.
+// Atenção: NaN (Not a Number) é o resultado para operações como estas: "A" * 10, "A" - 10, "A" / 10.
+  }// Repetição infinita também é conhecida como Loop infinito.
+
+  mostra("Essas são as copas até " + anoLimite + ".");
+</script>

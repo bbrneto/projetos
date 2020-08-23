@@ -1,0 +1,53 @@
+<script>
+  var sorteados = [];
+
+  var qtdeSorteios = 1;
+
+  while (qtdeSorteios <= 6) {
+    var numeroSorteado = parseInt(prompt("Número sorteado"));
+
+    if (numeroSorteado < 1 || numeroSorteado > 60) {
+      alert("Informe um novo número sorteado!");
+    } else {
+        sorteados.push(numeroSorteado);
+
+        console.log(sorteados);
+
+        qtdeSorteios = qtdeSorteios + 1;
+    }
+  }
+
+  var informados = [];
+
+  var qtdeNumeros = 1;
+
+  while (qtdeNumeros <= 6) {
+    var numeroInformado = parseInt(prompt("Número informado"));
+
+    if (numeroInformado < 1 || numeroInformado > 60) {
+      alert("Informe um novo número!");
+    } else {
+        informados.push(numeroInformado);
+
+        console.log(informados);
+
+        qtdeNumeros = qtdeNumeros + 1;
+    }
+  }
+
+  var acertos = [];
+
+  for (var i = 0; i < sorteados.length; i++) {
+    for (var j = 0; j < informados.length; j++) {
+      var numeroSorteado = sorteados[i];
+
+      if (numeroSorteado == informados[j]) {
+        acertos.push(numeroSorteado);
+      }
+    }
+  }
+
+  alert("Qtde de acertos: " + acertos.length);
+
+  console.log(acertos);
+</script>

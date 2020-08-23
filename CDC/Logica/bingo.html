@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bingo</title>
+  </head>
+
+  <body>
+      <input id="numero" type="text">
+
+      <input id="verificar" type="submit" value="Verifique o bingo">
+
+      <script>
+        var sorteados = [];
+
+        function contem(numero) {
+          for (var i = 0; i < sorteados.length; i++) {
+            if (numero == sorteados[i]) {
+              return true;
+            }
+          }
+
+          return false;
+        }
+
+        var caixaDoNumero = document.getElementById("numero");
+
+        function verifica() { // Função de callback.
+          var numero = caixaDoNumero.value;
+
+          if (contem(numero)) {
+            alert("Esse número já foi sorteado!");
+          } else {
+            sorteados.push(numero);
+
+            console.log(sorteados);
+          }
+        }
+
+        var botaoVerificar = document.getElementById("verificar");
+        botaoVerificar.onclick = verifica;
+      </script>
+  </body>
+</html>

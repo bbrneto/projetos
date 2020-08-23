@@ -1,0 +1,43 @@
+<script>
+  function pulaLinha() {
+    document.write("<br>");
+  }
+
+  function mostra(frase) {
+    document.write("<big>" + frase + "</big>");
+    pulaLinha();
+  }
+
+  function calculaIMC(peso, altura) {
+    var imc = peso / (altura * altura);
+
+    return imc;
+  }
+
+  var meuPeso = 80;
+  var minhaAltura = 1.65;
+
+// A função Math.round() arredonda um número para inteiro.
+  var meuIMC = Math.round(calculaIMC(meuPeso, minhaAltura));
+  mostra("Meu IMC é: " + meuIMC);
+  mostra("Estou " + (35 - meuIMC) + " pontos abaixo do limite de obesidade.")
+
+  if (meuIMC < 18.5) {
+    mostra("Meu IMC indica que estou ABAIXO do peso.");
+  }
+
+  if (meuIMC > 35) {
+    mostra("Meu IMC indica que estou ACIMA do peso.");
+  }
+
+  if (meuIMC >= 18.5 && meuIMC <= 35) {
+    mostra("Meu IMC indica que estou com o peso adequado.")
+  }
+
+  var pesoDoPrimo = 83;
+  var alturaDoPrimo = 1.76;
+
+  var imcDoPrimo = Math.round(calculaIMC(pesoDoPrimo, alturaDoPrimo));
+  mostra("O IMC do meu primo é: " + imcDoPrimo);
+  mostra("Ele ainda está " + (imcDoPrimo - 18.5) + " pontos acima do limite da magreza.")
+</script>

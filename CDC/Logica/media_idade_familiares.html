@@ -1,0 +1,19 @@
+<script>
+  function mostra(frase) {
+    document.write(frase + "<br>");
+  }
+
+  var totalDeFamiliares = prompt("Quantos familiares?");
+
+  var somaDeIdades = 0;
+
+  for (var numero = 1; numero <= totalDeFamiliares; numero++) {
+    var idade = parseInt(prompt("Qual a idade?"));
+
+    somaDeIdades = somaDeIdades + idade;
+  }
+
+  var media = somaDeIdades / totalDeFamiliares;
+
+  mostra(media);
+</script>

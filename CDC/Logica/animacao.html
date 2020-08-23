@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animação</title>
+  </head>
+  <body>
+    <canvas id="tela" width="600" height="400"></canvas>
+
+    <script>
+      var tela = document.getElementById('tela');
+
+      var c = tela.getContext("2d");
+
+      function limpaTela() {
+        c.clearRect(0, 0, 600, 400);
+      }
+
+      function circulo(x, y, raio) {
+        c.strokeStyle = "blue";
+        c.beginPath();
+        c.arc(x, y, raio, 0, 2 * Math.PI);
+        c.stroke();
+      }
+
+      function parabola(x, raio) {
+        var y = 0.01 * x * x;
+
+        c.fillStyle = "green";
+        c.beginPath();
+        c.arc(x, 400 - y, raio, 0, 2*Math.PI);
+        c.fill();
+      }
+
+      function seno(x, raio) {
+        var y = Math.sin(x/20) * 100 + 200;
+
+        c.fillStyle = "yellow";
+        c.beginPath();
+        c.arc(x, y, raio, 0, 2*Math.PI);
+        c.fill();
+      }
+
+      var imagem = new Image();
+      imagem.src = "http://www.caelum.com.br/imagens/instrutores/fotos/paulo-silveira-90.jpg";
+
+      function desenhaImagem(x, y) {
+        c.drawImage(imagem, x, y);
+      }
+
+      var x = 1;
+
+      function desenha() {
+        // limpaTela();
+
+        // circulo(x, x, 10);
+        // parabola(x, 10);
+        seno(x, 10);
+        // desenhaImagem(x, 100);
+
+        x = x + 1;
+      }
+
+      setInterval(desenha, 30);
+    </script>
+  </body>
+</html>

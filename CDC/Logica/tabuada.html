@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<script>
+  function mostra(frase) {
+    document.write(frase + "<br>");
+  }
+
+  var numero = prompt("Qual tabuada?");
+
+  var multiplicador = 1;// Inicialização
+
+  while (multiplicador <= 10) {// Condição de parada
+    var multiplicacao = numero * multiplicador;
+
+    mostra(numero + " vezes " + multiplicador + " é igual a " + multiplicacao);
+
+    multiplicador = multiplicador + 1;// Incremento
+  }
+
+  mostra("Essa é a tabuada de " + numero);
+</script>

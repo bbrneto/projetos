@@ -1,0 +1,105 @@
+npm --version
+npm install -g @angular/cli
+
+ng --version
+ng new alurapic
+ng serve --open
+
+
+
+
+
+benedito@Benedito-PC:~$ npm --version
+6.14.3
+benedito@Benedito-PC:~$ ng --version
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+    
+
+Angular CLI: 9.0.7
+Node: 12.16.1
+OS: linux x64
+
+Angular: 
+... 
+Ivy Workspace: 
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.900.7
+@angular-devkit/core         9.0.7
+@angular-devkit/schematics   9.0.7
+@schematics/angular          9.0.7
+@schematics/update           0.900.7
+rxjs                         6.5.3
+    
+benedito@Benedito-PC:~$ cd /home/benedito/Projetos/Alura/Angular
+benedito@Benedito-PC:~/Projetos/Alura/Angular$ ng new alurapic
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? CSS
+CREATE alurapic/README.md (1025 bytes)
+CREATE alurapic/.editorconfig (246 bytes)
+CREATE alurapic/.gitignore (631 bytes)
+CREATE alurapic/angular.json (3583 bytes)
+CREATE alurapic/package.json (1285 bytes)
+CREATE alurapic/tsconfig.json (489 bytes)
+CREATE alurapic/tslint.json (1953 bytes)
+CREATE alurapic/browserslist (429 bytes)
+CREATE alurapic/karma.conf.js (1020 bytes)
+CREATE alurapic/tsconfig.app.json (210 bytes)
+CREATE alurapic/tsconfig.spec.json (270 bytes)
+CREATE alurapic/src/favicon.ico (948 bytes)
+CREATE alurapic/src/index.html (294 bytes)
+CREATE alurapic/src/main.ts (372 bytes)
+CREATE alurapic/src/polyfills.ts (2835 bytes)
+CREATE alurapic/src/styles.css (80 bytes)
+CREATE alurapic/src/test.ts (753 bytes)
+CREATE alurapic/src/assets/.gitkeep (0 bytes)
+CREATE alurapic/src/environments/environment.prod.ts (51 bytes)
+CREATE alurapic/src/environments/environment.ts (662 bytes)
+CREATE alurapic/src/app/app-routing.module.ts (246 bytes)
+CREATE alurapic/src/app/app.module.ts (393 bytes)
+CREATE alurapic/src/app/app.component.css (0 bytes)
+CREATE alurapic/src/app/app.component.html (25755 bytes)
+CREATE alurapic/src/app/app.component.spec.ts (1065 bytes)
+CREATE alurapic/src/app/app.component.ts (212 bytes)
+CREATE alurapic/e2e/protractor.conf.js (808 bytes)
+CREATE alurapic/e2e/tsconfig.json (214 bytes)
+CREATE alurapic/e2e/src/app.e2e-spec.ts (641 bytes)
+CREATE alurapic/e2e/src/app.po.ts (301 bytes)
+✔ Packages installed successfully.
+    Directory is already under version control. Skipping initialization of git.
+benedito@Benedito-PC:~/Projetos/Alura/Angular$ cd alurapic/
+benedito@Benedito-PC:~/Projetos/Alura/Angular/alurapic$ ng serve --open
+0% compiling
+Compiling @angular/core : es2015 as esm2015
+
+Compiling @angular/common : es2015 as esm2015
+
+Compiling @angular/platform-browser : es2015 as esm2015
+
+Compiling @angular/platform-browser-dynamic : es2015 as esm2015
+
+Compiling @angular/router : es2015 as esm2015
+
+chunk {main} main.js, main.js.map (main) 60.6 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 141 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 9.72 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 2.99 MB [initial] [rendered]
+Date: 2020-05-05T21:25:58.456Z - Hash: 3cd13f18b96df300330e - Time: 31672ms
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.
+
+Date: 2020-05-05T21:26:00.204Z - Hash: 3cd13f18b96df300330e
+5 unchanged chunks
+
+Time: 1137ms
+: Compiled successfully.
+
+

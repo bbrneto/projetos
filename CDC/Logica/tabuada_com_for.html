@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+<script>
+  /*
+  Este código
+  for ( ; ; ) {
+    alert("Ops!");
+  }
+
+  é equivalente a este:
+  while (true) {
+    alert("Ops!");
+  }
+  */
+
+  function mostra(frase) {
+    document.write(frase + "<br>");
+  }
+
+  var numero = prompt("Qual tabuada?");
+
+  for (var multiplicador = 1; multiplicador <= 10; multiplicador = multiplicador + 1) {// Sintaxe do comando "for"
+    var multiplicacao = numero * multiplicador;
+
+    mostra(numero + " vezes " + multiplicador + " é igual a " + multiplicacao);
+  }
+
+  mostra("Essa é a tabuada de " + numero);
+
+  /*
+  for (Inicialização; Condição de parada; Incremento) {
+
+  }
+  Atenção: A inicialização é executada apenas uma única vez.
+  Atenção: O incremento é executado ao final de cada repetição/iteração.
+  */
+</script>

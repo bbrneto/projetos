@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bandeira da Colômbia</title>
+  </head>
+  <body>
+    <canvas id="bandeira" width="600" height="400"></canvas>
+
+    <script>
+      const canvas = document.getElementById("bandeira");
+      const context = canvas.getContext('2d');
+
+      context.fillStyle = "yellow";
+      context.fillRect(0, 0, 600, 200);
+
+      context.fillStyle = "blue";
+      context.fillRect(0, 200, 600, 100);
+
+      context.fillStyle = "red";
+      context.fillRect(0, 300, 600, 100);
+    </script>
+  </body>
+</html>

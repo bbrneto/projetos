@@ -1,0 +1,21 @@
+{// O compilador TypeScript (tsc) fica na pasta node_modules/.bin
+    "compilerOptions": {
+        "target": "es6",// O código TypeScript será compilado para JavaScript 2015 (ES6).
+        "outDir": "app/js",// A pasta "js" armazena o código JavaScript gerado.
+        "noEmitOnError": true,
+        "noImplicitAny": true
+    },
+    "include": [
+        "app/ts/**/*"// A pasta "ts" e seus subdiretórios serão compilados.
+    ]
+}// O compilador TypeScript necessita do Node.js (npm) para funcionar.
+
+// O Node.js é usado apenas em ambiente de desenvolvimento,
+// para que possamos gerar os arquivos .js a partir da compilação dos arquivos .ts.
+
+// npm run compile: converte o código TypeScript em JavaScript.
+// npm start: compila o código em tempo real.
+
+// O TypeScript é um superset da ES2015, ou seja, 
+// além de suportar os recursos da linguagem dessa versão, adiciona outros.
+// Um exemplo é o suporte ao modificador private.

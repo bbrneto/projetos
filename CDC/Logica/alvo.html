@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Alvo</title>
+  </head>
+  <body>
+    <canvas id="tela" width="600" height="400"></canvas>
+
+    <script>
+      var tela = document.getElementById('tela');
+
+      var c = tela.getContext("2d");
+
+      var pontos = 0;
+
+      function limpa() {
+        c.clearRect(0, 0, 600, 400);
+      }
+
+      function sorteia(numero) {
+        // A função Math.random() gera números aleatórios entre 0 e 1.
+        return Math.round(Math.random() * numero);
+      }
+
+      function cor(name) {
+        c.strokeStyle = name;
+      }
+
+      function circulo(x, y, raio) {
+        c.beginPath();
+        c.arc(x, y, raio, 0, 2 * Math.PI);
+        c.stroke();
+      }
+
+      function alvo(x, y) {
+        var raio = 40;
+
+        cor("white");
+        circulo(x, y, raio);
+
+        cor("red");
+        circulo(x, y, raio - 10);
+
+        cor("white");
+        circulo(x, y, raio - 20);
+
+        cor("red");
+        circulo(x, y, raio - 30);
+      }
+
+      function pontuacao() {
+        c.fillStyle = 'black';
+        c.fillText("Pontuação: " + pontos, 30, 30)
+      }
+
+      var alvoX;
+      var alvoY;
+
+      function desenha() {
+        limpa();
+
+        alvoX = sorteia(600);
+        alvoY = sorteia(400);
+        console.log('Alvo: ' + alvoX + ', ' + alvoY);
+
+        alvo(alvoX, alvoY);
+
+        pontuacao();
+      }
+
+      setInterval(desenha, 1000);
+
+      function tiro(mouseEvent) {
+        var x = mouseEvent.pageX - tela.offsetLeft;
+
+        var y = mouseEvent.pageY - tela.offsetTop;
+
+        c.beginPath();
+        c.arc(x, y, 5, 0, 2 * Math.PI);
+        c.fill();
+
+        let a;
+
+        if (x < alvoX) {
+          a = alvoX - x;
+        } else {
+          a = x - alvoX;
+        }
+
+        let b;
+
+        if (y < alvoY) {
+          b = alvoY - y;
+        } else {
+          b = y - alvoY;
+        }
+
+        if ((a * a) + (b * b) <= (40 * 40)) {// Teorema de Pitágoras
+          pontos++;
+        } else {
+          pontos--;
+        }
+
+        console.log('Tiro: ' + x + ', ' + y);
+      }
+
+      tela.onclick = tiro;
+    </script>
+  </body>
+</html>

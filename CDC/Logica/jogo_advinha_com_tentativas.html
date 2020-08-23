@@ -1,0 +1,34 @@
+<script>
+  function sorteia(numero) {
+    // A função Math.random() gera números aleatórios entre 0 e 1.
+    return Math.round(Math.random() * numero);
+  }
+
+  var numeroPensado = sorteia(5);
+
+  var totalTentativas = 1;
+
+  while (true) {
+    var chute = prompt("Qual o número sorteado?");
+
+    if (isNaN(chute)) {
+      alert("Digite apenas números.");
+    } else {
+      if (chute == numeroPensado) {
+        alert("Parabéns! Você acertou!");
+
+        break;// A repetição deve ser interrompida.
+      } else {
+        if (numeroPensado < chute) {
+          alert("Você errou! Pensei um número menor.");
+        } else {
+          alert("Você errou! Pensei um número maior.");
+        }
+      }
+    }
+
+    totalTentativas++;
+  }
+
+  alert("Número sorteado: " + numeroPensado + ". Total de tentativas: " + totalTentativas);
+</script>

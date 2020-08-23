@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Advinha+</title>
+  </head>
+
+  <body>
+    <!-- Input significa entrada de dados. -->
+    <input id="numero" type="text" />
+
+    <input id="advinhar" type="submit" value="Compare com o número que estou pensando!" />
+
+    <script>
+      function sorteia(numero) {
+        return Math.round(Math.random() * numero);
+      }
+
+      var segredo = sorteia(5);
+
+      var caixaDoNumero = document.getElementById("numero");// Caixa de texto.
+
+      function botaoClicado() {
+        var numeroDigitado = caixaDoNumero.value;// Valor inserido na caixa de texto.
+
+        if (numeroDigitado == segredo) {
+          alert("Parabéns! Você acertou o número secreto.")
+        } else {
+          alert("Ops! Você errou!");
+        }
+
+        caixaDoNumero.value = "";
+      }
+
+      // É muito frequente relacionar um determinado acontecimento à execução de uma função.
+      // Esses acontecimentos são comumente chamados de eventos (Ex.: onclick).
+      // Essas funções a serem executadas em determinados eventos são conhecidas como funções de callback.
+      var botaoAdvinhar = document.getElementById("advinhar");
+      botaoAdvinhar.onclick = botaoClicado;
+    </script>
+  </body>
+</html>

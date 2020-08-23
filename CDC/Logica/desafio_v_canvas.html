@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>V</title>
+  </head>
+  <body>
+    <canvas id="tela" width="500" height="500"></canvas>
+
+    <script>
+      var tela = document.getElementById("tela");
+
+      var pincel = tela.getContext("2d");
+
+      function desenhaBola(linha, coluna, cor) {
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(25 + ((coluna - 1) * 50), 25 + (linha * 50), 25, 0, 2 * Math.PI);
+        pincel.fill();
+      }
+
+      function calculaNumeroDeColunas(numeroDeLinhas) {
+        return (numeroDeLinhas * 2) - 1;
+      }
+
+      var numeroDeLinhas = prompt("Quantas linhas?");
+
+      var numeroDeColunas = calculaNumeroDeColunas(numeroDeLinhas);
+
+      for(var linha = 0; linha < numeroDeLinhas; linha = linha + 1) {
+        for(var coluna = 1; coluna <= numeroDeColunas; coluna = coluna + 1) {
+          if (coluna == linha + 1 || coluna == numeroDeColunas - linha) {
+            desenhaBola(linha, coluna, "green");
+          } else {
+            desenhaBola(linha, coluna, "yellow");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

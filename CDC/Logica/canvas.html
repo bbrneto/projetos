@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+  </head>
+  <body>
+    <canvas id="tela" width="600" height="400"></canvas>
+
+    <script>
+      var tela = document.getElementById("tela");
+      var c = tela.getContext("2d"); // Essa variável é semelhante a um pincel.
+
+      c.fillStyle = "green";
+      c.fillRect(0, 0, 200, 400); // (x, y, width, height)
+
+      c.fillStyle = "red";
+      c.fillRect(400, 0, 200, 400);
+
+      c.fillStyle = "gray";
+      c.beginPath(); // Inicia o traçado
+      c.moveTo(300, 200); // Move o pincel para o centro da tela.
+      c.lineTo(200, 400); // Traça o primeiro lado.
+      c.lineTo(400, 400); // Traça o segundo lado.
+      c.fill(); // O terceiro lado fica implícito.
+
+      //  Math.PI é uma constante.
+      c.fillStyle = "blue";
+      c.beginPath();
+      c.arc(300, 200, 50, 0, 2 * Math.PI); // (x, y, raio, ângulo inicial, ângulo final)
+      c.fill();
+    </script>
+  </body>
+</html>
