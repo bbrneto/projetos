@@ -1,0 +1,74 @@
+# Inclusão de dados no ElasticSearch:
+POST /catalogo/pessoas/1
+{
+    "nome": "João Silva",
+    "interesses": ["futebol", "música", "literatura"],
+    "cidade": "São Paulo",
+    "formação": "Letras",
+    "estado": "SP",
+    "país": "Brasil"
+}
+
+
+POST /catalogo/pessoas/2
+{
+    "nome": "Maria Silva",
+    "interesses": ["pintura", "literatura", "teatro"],
+    "cidade": "Diamantina",
+    "formação": "Artes Plásticas",
+    "estado": "MG",
+    "país": "Brasil"
+}
+
+
+POST /catalogo/pessoas/3
+{
+    "nome": "Richard Edward",
+    "interesses": ["matemática", "física", "música"],
+    "cidade": "Boston",
+    "formação": "Física",
+    "estado": "MA",
+    "país": "Estados Unidos"
+}
+
+
+POST /catalogo/pessoas/4
+{
+    "nome": "Patrick von Steppat",
+    "interesses": ["computação", "culinária", "cinema"],
+    "cidade": "Rio de Janeiro",
+    "formação": "Gastronomia",
+    "estado": "RJ",
+    "país": "Brasil"
+}
+
+
+# Documento por identificador:
+GET /<indice>/<tipo>/<identificator> 
+GET /catalogo/pessoas/3
+{}
+
+
+# Todos os documentos:
+GET /catalogo/pessoas/_search
+{}
+
+
+# Pesquisa por filtro:
+GET /catalogo/pessoas/_search?q=futebol
+{}
+
+
+# Alteração do número de réplicas:
+PUT /catalogo/_settings
+{
+	"index": {
+		"number_of_replicas": 0
+	}
+}
+
+
+# Atenção!
+ElasticSearch não é a única solução disponível que trás o Apache Lucene para a nuvem.
+É natural que a própria Apache Foundation tenha sua própria solução.
+Essa solução tem o nome de Apache Solr.

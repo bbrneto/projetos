@@ -1,0 +1,45 @@
+- Declaração na forma literal
+
+var pessoa = { 
+    nome: 'Flávio Almeida',
+    empresa: 'Alura'
+};
+
+
+
+- Função como expressão
+
+var exibeAlerta = function() {
+    alert('Sucesso!');
+};
+
+
+
+- Função declarada
+
+function minhaFuncao() {
+    alert('Sucesso!');
+};
+
+
+
+- Adição dinâmica de propriedades
+
+var pessoa = {};
+pessoa.fala = function() {
+   alert('Olá');
+};
+
+
+
+- Function hoisting (funções são movidas para o topo)
+
+a();
+
+function a() {
+  b();
+}
+
+function b() {
+  alert('Função b foi chamada');
+}

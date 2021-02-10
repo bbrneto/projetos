@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.lightGreen,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Frases do dia'),
+      home: MyHomePage(title: 'Frases do dia'),// Titulo da AppBar
     );
   }
 }
